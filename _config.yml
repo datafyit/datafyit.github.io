@@ -1,0 +1,11 @@
+name: Datafy.it TIL
+url: http://datafyit.github.io/
+description: How we deal with The Internets of data.
+
+permalink: /:year/:month/:day/:title/
+paginate: 10
+highlighter: pygments
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+gems: ['jekyll-paginate']
