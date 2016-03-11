@@ -12,4 +12,10 @@ If you have two fixtures with the same name, one in your app's fixtures folder a
 So, if you run tests, expecting that your test suite will use `my_app/fixtures/companies.json`,
 you're gonna have a bad time. It will actually use the one in your `root` directory.
 
-{% highlight bash %} . ├── companies.json ├── my_app | ├── fixtures | └── companies.json {% endhighlight %}
+{% highlight bash %}
+.
+├── companies.json
+├── my_app
+|   ├── fixtures
+|   └── companies.json
+{% endhighlight %}
