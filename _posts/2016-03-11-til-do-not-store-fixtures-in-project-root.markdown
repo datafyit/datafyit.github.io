@@ -1,5 +1,6 @@
 ---
 layout: post
+author: Primož Kerin
 title:  "TIL Do Not Store Fixtures In Project Root"
 date:   2016-03-11 13:29:37 +0100
 categories: django tests
