@@ -18,5 +18,5 @@ you're gonna have a bad time. It will actually use the one in your `root` direct
 ├── companies.json
 ├── my_app
 |   ├── fixtures
-|   └── companies.json
+|   |   └── companies.json
 {% endhighlight %}
