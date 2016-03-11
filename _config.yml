@@ -1,6 +1,8 @@
 name: Datafy.it TIL
 url: http://datafyit.github.io/
 description: How we deal with The Internets of data.
+twitter: datafyit
+github: datafyit
 
 permalink: /:year/:month/:day/:title/
 paginate: 10
