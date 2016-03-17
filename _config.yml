@@ -1,13 +1,17 @@
-name: Datafy.it TIL
-url: http://datafyit.github.io/
+name: Datafy.it Engineering
+url: http://tech.datafy.it
 description: How we deal with The Internets of data.
 twitter: datafyit
 github: datafyit
 
-permalink: /:year/:month/:day/:title/
+permalink: :categories/:year/:month/:day/:title/
 paginate: 10
 highlighter: rouge
 
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
-gems: ['jekyll-paginate']
+gems: [
+  'jekyll-paginate',
+  'jekyll-sitemap',
+  'jekyll-seo-tag'
+]
