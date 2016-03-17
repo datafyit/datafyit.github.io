@@ -1,9 +1,13 @@
 ---
 layout: post
 author: Primož Kerin
-title:  "TIL Do Not Store Fixtures In Project Root"
+title:  "TIL: Do Not Store Fixtures In Project Root"
 date:   2016-03-11 13:29:37 +0100
-categories: django tests
+categories:
+    - til
+tags:
+    - django
+    - testing
 ---
 
 Always check for the same name files in your Django project.
