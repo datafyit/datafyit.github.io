@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{% if page.title %} {{ page.title }} | {{ site.name }}{% else %} {{ site.name }} {% endif %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width">
-  <meta name="google-site-verification" content="lgyG-oJVk692Kso0B1p_Ty1a35NMVwfMiWJGLL9iDDQ" />
+      <!-- syntax highlighting CSS -->
+      <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
 
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+      <!-- Bootstrap core CSS -->
+  	  <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="/assets/css/style.css" rel="stylesheet" />
-  <link href="/assets/css/colors-dark.css" rel="stylesheet" />
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
-</head>
+    {% seo title=false %}
+  </head>
+  <body>
 
-<body>
+	<div class="container">
 
+		<div class="col-sm-3 navigation">
 
+      <a href="{{ site.baseurl }}/"><h1>{{ site.name }}</h1></a>
+      <h2><small>{{ site.description }}</small></h2>
 
-  <header id="header">
-    <h1><a href="/"><i class="icon-sun"></i> {{ site.name }}</a></h1>
-    <p>{{ site.description }}</p>
-  </header>
-
-
-
-  <div id="page">
-
-
-
-    <div id="sidebar">
       <nav>
+        <strong>navigation</strong>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/archives">Archive</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="http://twitter.com/{{ site.twitter }}">Twitter</a></li>
-          <li><a href="/feed.xml">RSS Feed</a></li>
+			    <li><a href="{{ site.baseurl }}/">home</a></li>
+    			{% for i in site.urls %}
+    				<li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
+    			{% endfor %}
         </ul>
       </nav>
-    </div>
 
+      <nav id="social">
+      <strong>reach out</strong><br />
+      <ul>
+      {% for i in site.social_urls %}
+        <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
+      {% endfor %}
+      </ul>
+      </nav>
 
+			{% if site.about %}
+			<div id="about">
+				<strong>about</strong><br />
+				{{ site.about }}
+        <br />
+        <a href="{{ site.website }}"><img id="about" src="{{ site.baseurl }}/img/logo.png" height="36px" width="171px" /></a>
+			</div>
 
-    <div id="content">
-      {{ content }}
-    </div>
+			{% endif %}
+		</div>
 
+		<div class="col-sm-8 col-offset-1">
 
+			{{ content }}
 
-  </div>
+			<footer>
+				&copy; {{ site.time | date: '%Y' }} {{ site.name }}
+				{% if site.github %}
+					- <a href="{{ site.github }}">{{ site.github }}</a>
+				{% endif %}
+			</footer>
+		</div>
 
+	</div>
 
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
 
-  <footer id="footer">
-    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme by <a href="http://www.webmaster-source.com">Matt Harzewski</a></p>
-  </footer>
-
-
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script src="/assets/js/jquery.mobilemenu.min.js"></script>
-
-  <script>
-    $(document).ready(function(){
-      $('#sidebar nav ul').mobileMenu({'topOptionText': 'Menu', 'prependTo': '#sidebar nav'});
-    });
-  </script>
-
-  <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-    try {
-      var pageTracker = _gat._getTracker("UA-48374466-3");
-    pageTracker._trackPageview();
-    } catch(err) {}
-  </script>
-
-</body>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-48374466-3");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+  </body>
 </html>

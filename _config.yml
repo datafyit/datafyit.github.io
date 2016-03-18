@@ -1,12 +1,34 @@
 name: Datafy.it Engineering
 url: http://tech.datafy.it
-description: How we deal with The Internets of data.
-twitter: datafyit
-github: datafyit
+description: How we deal with The Internet and its data.
+github: https://github.com/datafyit
+website: https://datafy.it
+about: While developing our products we stumble into a lot of strange things. This is where we share them with you in an attempt to find  or indeed avoid them.
+
+twitter:
+  username: datafyit
+
+social:
+  name: Datafy.it
+
+google_site_verification: lgyG-oJVk692Kso0B1p_Ty1a35NMVwfMiWJGLL9iDDQ
 
 permalink: :categories/:year/:month/:day/:title/
 paginate: 10
 highlighter: rouge
+excerpt_separator: <!--more-->
+
+urls:
+    - text: today-i-learned
+      url: /til/
+
+social_urls:
+    - text: github
+      url: https://github.com/datafyit
+    - text: twitter
+      url: https://twitter.com/datafyit
+    - text: facebook
+      url: https://www.facebook.com/datafy/
 
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
@@ -15,3 +37,4 @@ gems: [
   'jekyll-sitemap',
   'jekyll-seo-tag'
 ]
+

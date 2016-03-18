@@ -1,6 +1,5 @@
 ---
 layout: default
-title: Datafy.it TIL
 ---
 
 {% for post in paginator.posts %}
@@ -15,8 +14,9 @@ title: Datafy.it TIL
 		{% else %}
 			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 		{% endif %}
+		<span class="time">{{ post.date | date_to_string }}{% if post.author %} by {{ post.author }}{% endif %}</span>
 
-		<div class="post-content">{{ post.content }}</div>
+		<div class="content">{{ post.content }}</div>
 
 	</article>
 
@@ -25,25 +25,26 @@ title: Datafy.it TIL
 
 
 {% if paginator.total_pages > 1 %}
-	<div class="postnavigation">
+	<nav>
+		<ul class="pager">
 
 		{% if paginator.previous_page %}
 			{% if paginator.page == 2 %}
-				<a class="prev left" href="/">&larr; Newer</a>
+				<li class="previous"><a href="/"><span aria-hidden="true">&larr;</span> Newer</a></li>
 			{% else %}
-				<a class="prev left" href="/page{{paginator.previous_page}}/">&larr; Newer</a>
+				<li class="previous"><a href="/page{{paginator.previous_page}}/"><span aria-hidden="true">&larr;</span> Newer</a></li>
 			{% endif %}
 		{% else %}
-			<span class="nope left">&larr; Newer</span>
+			<li class="previous disabled"><a href="#">&larr; Newer</a></li>
 		{% endif %}
 
 		<span class="pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
 		{% if paginator.next_page %}
-			<a class="next right" href="/page{{paginator.next_page}}/">Older &rarr;</a>
+			<li class="next"><a href="/page{{paginator.next_page}}/">Older <span aria-hidden="true">&rarr;</span></a></li>
 		{% else %}
-			<span class="nope right">Older &rarr;</span>
+			<li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
 		{% endif %}
-
-	</div>
+		</ul>
+	</nav>
 {% endif %}
