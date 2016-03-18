@@ -4,7 +4,12 @@ seo:
   type: BlogPosting
 ---
 <h1>{{ page.title }}</h1>
-<span class="time">{{ page.date | date_to_string }}{% if page.author %} by {{ page.author }}{% endif %}</span>
+<div class="post-meta">
+    <span class="time">{{ page.date | date_to_string }}</span>
+    {% if page.author %}<span> by {{ page.author }}</span>{% endif %}
+    <span class="pull-right">{{ page.categories | array_to_sentence_string }}
+    {% if page.tags %} | {{ page.tags | array_to_sentence_string }}</span>{% endif %}</span>
+</div>
 
 <div class="content">
 	<div class="post">{{ content }}</div>
