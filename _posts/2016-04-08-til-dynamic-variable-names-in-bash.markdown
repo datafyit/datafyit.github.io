@@ -2,7 +2,7 @@
 layout: post
 author: Uroš Trebec
 title:  "TIL: Dynamic variable names in Bash"
-date:   2016-04-08 19:13:00 +0100
+date:   2016-04-08 19:13:01 +0100
 categories:
     - til
 tags:
